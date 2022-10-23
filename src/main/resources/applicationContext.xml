@@ -11,7 +11,7 @@
     </bean>
 
     <bean id="bookDao" class="books.dao.BookDaoJdbcImpl">
-        <constructor-arg ref="dbConnectBook"/>
+        <property name="dbConnectBook" ref="dbConnectBook"/>
     </bean>
 
     <bean id="serviceBook" class="books.service.ServiceBookImpl">
