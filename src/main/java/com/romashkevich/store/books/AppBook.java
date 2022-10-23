@@ -6,8 +6,9 @@ import com.romashkevich.store.books.service.ServiceBookImpl;
 import com.romashkevich.store.books.service.dto.BookDto;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import java.util.Scanner;
 
 public class AppBook {
@@ -15,8 +16,10 @@ public class AppBook {
     private static final Logger logger = LogManager.getRootLogger();
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ServiceBook serviceBook = context.getBean("serviceBook", ServiceBookImpl.class);
+//      ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//      ServiceBook serviceBook = context.getBean("serviceBook", ServiceBookImpl.class);
+        ApplicationContext cxt = new AnnotationConfigApplicationContext(BookApplicationContexts.class);
+        ServiceBook serviceBook = cxt.getBean(ServiceBookImpl.class);
 
         boolean process = true;
         while (process) {
@@ -80,7 +83,7 @@ public class AppBook {
             }
 
         }
-        context.close();
+//        context.close();
 
     }
 

@@ -13,13 +13,13 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-@Service("serviceBook")
+//@Service("serviceBook")
 public class ServiceBookImpl implements ServiceBook {
 //    DbConnect dbConnect;
     private BookDaoJdbcImpl bookDao;
     private static final Logger loger = LogManager.getLogger("run main.books.service method");
 
-    @Autowired
+//    @Autowired
     public void setBookDao(BookDaoJdbcImpl bookDao) {
         this.bookDao = bookDao;
     }

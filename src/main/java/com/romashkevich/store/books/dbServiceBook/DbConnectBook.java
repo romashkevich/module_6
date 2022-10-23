@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Properties;
 
 
-@Component("dbConnectBook")
+@Component
 public class DbConnectBook {
         private Connection connection;
         private static final Logger loger = LogManager.getLogger("connect db");

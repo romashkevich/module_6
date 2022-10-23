@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 //main.books.dao - data access object / / объект доступа к данным
-@Repository("bookDao")
+//@Repository("bookDao")
 public class BookDaoJdbcImpl implements Bookdao {
     private DbConnectBook dbConnectBook;
 
@@ -31,8 +31,8 @@ public class BookDaoJdbcImpl implements Bookdao {
 
     public static final Logger logger = LogManager.getLogger("request on bd");
 
-    public BookDaoJdbcImpl(){}
-    @Autowired
+
+//    @Autowired
     public void setDbConnectBook(DbConnectBook dbConnectBook) {
         this.dbConnectBook = dbConnectBook;
     }
