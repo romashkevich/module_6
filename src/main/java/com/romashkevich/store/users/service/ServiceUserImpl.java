@@ -12,17 +12,21 @@ import com.romashkevich.store.users.service.dto.AdressDto;
 import com.romashkevich.store.users.service.dto.RoleDto;
 import com.romashkevich.store.users.service.dto.SexDto;
 import com.romashkevich.store.users.service.dto.UserDto;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service("serviceUser")
 public class ServiceUserImpl implements ServiceUser {
 
     private UserDaoJdbcImpl userDao;
     private static final Logger loger = LogManager.getLogger("run main.books.service method");
 
+    @Autowired
     public void setUserDao(UserDaoJdbcImpl userDao) {
         this.userDao = userDao;
     }

@@ -7,6 +7,8 @@ import com.romashkevich.store.users.dao.entity.Role;
 import com.romashkevich.store.users.dao.entity.Sex;
 import com.romashkevich.store.users.dao.entity.User;
 import com.romashkevich.store.users.dbServiceUsers.DbConnectUser;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 
 import java.sql.PreparedStatement;
@@ -16,7 +18,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Repository("userDao")
 public class UserDaoJdbcImpl implements UserDao {
     public static final String SELECT_USERS = "SELECT * FROM users WHERE deleted = false";
     public static final String SELECT_SEX = "SELECT * FROM sex WHERE  sex_id = ? ";
@@ -36,7 +38,7 @@ public class UserDaoJdbcImpl implements UserDao {
 
     private DbConnectUser dbConnectUser;
     private static final Logger logger = LogManager.getLogger("request on bd");
-
+    @Autowired
     public void setDbConnectUser(DbConnectUser dbConnectUser) {
         this.dbConnectUser = dbConnectUser;
     }
