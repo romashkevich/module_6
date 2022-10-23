@@ -5,39 +5,37 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://www.springframework.org/schema/util
-       https://www.springframework.org/schema/util/spring-util.xsd">
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+    ">
     
-    <context:component-scan base-package="books"/>
-    <context:component-scan base-package="users"/>
-    <context:component-scan base-package="controller"/>
+    <context:component-scan base-package="com.romashkevich.store"/>
 
 <!--......................................book.............................................-->
 
-    <bean id="dbConnectBook" class="books.dbServiceBook.DbConnectBook">
-    </bean>
+<!--    <bean id="dbConnectBook" class="com.romashkevich.store.books.dbServiceBook.DbConnectBook">-->
+<!--    </bean>-->
 
-    <bean id="bookDao" class="books.dao.BookDaoJdbcImpl">
-        <property name="dbConnectBook" ref="dbConnectBook"/>
-    </bean>
+<!--    <bean id="bookDao" class="com.romashkevich.store.books.dao.BookDaoJdbcImpl">-->
+<!--        <property name="dbConnectBook" ref="dbConnectBook"/>-->
+<!--    </bean>-->
 
-    <bean id="serviceBook" class="books.service.ServiceBookImpl">
-        <property name="bookDao" ref="bookDao"/>
-    </bean>
+<!--    <bean id="serviceBook" class="com.romashkevich.store.books.service.ServiceBookImpl">-->
+<!--        <property name="bookDao" ref="bookDao"/>-->
+<!--    </bean>-->
 
 <!--.......................................user............................................-->
 
-    <bean id="dbConnectUser" class="users.dbServiceUsers.DbConnectUser">
+    <bean id="dbConnectUser" class="com.romashkevich.store.users.dbServiceUsers.DbConnectUser">
     </bean>
 
-    <bean id="userDao" class="users.dao.UserDaoJdbcImpl">
+    <bean id="userDao" class="com.romashkevich.store.users.dao.UserDaoJdbcImpl">
         <property name="dbConnectUser" ref="dbConnectUser"/>
     </bean>
 
-    <bean id="serviceUser" class="users.service.ServiceUserImpl">
+    <bean id="serviceUser" class="com.romashkevich.store.users.service.ServiceUserImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
-
 
 </beans>
 
