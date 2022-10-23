@@ -31,9 +31,7 @@ public class BookDaoJdbcImpl implements Bookdao {
 
     public static final Logger logger = LogManager.getLogger("request on bd");
 
-    public BookDaoJdbcImpl(DbConnectBook dbConnectBook) {
-        this.dbConnectBook = dbConnectBook;
-    }
+    public BookDaoJdbcImpl(){}
 
     public void setDbConnectBook(DbConnectBook dbConnectBook) {
         this.dbConnectBook = dbConnectBook;

@@ -9,7 +9,7 @@ import users.service.ServiceUserImpl;
 import users.service.dto.UserDto;
 
 public class UserCommand implements Command {
-        private static final ServiceUser SERVICE_USER_ALL = new ServiceUserImpl(new UserDaoJdbcImpl(new DbConnectUser()));
+        private static final ServiceUser SERVICE_USER_ALL = new ServiceUserImpl();
 
         public String execute(HttpServletRequest req){
                 try {

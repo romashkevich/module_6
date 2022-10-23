@@ -2,6 +2,7 @@ package books.dbServiceBook;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
+@Component("dbConnectBook")
 public class DbConnectBook {
         private Connection connection;
         private static final Logger loger = LogManager.getLogger("connect db");

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class BookCommand implements Command {
 
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl(new BookDaoJdbcImpl(new DbConnectBook()));
+    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
 
     public String execute(HttpServletRequest req) {
             try {

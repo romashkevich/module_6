@@ -23,7 +23,7 @@ public class ServiceUserImpl implements ServiceUser {
     private UserDaoJdbcImpl userDao;
     private static final Logger loger = LogManager.getLogger("run main.books.service method");
 
-    public ServiceUserImpl(UserDaoJdbcImpl userDao) {
+    public void setUserDao(UserDaoJdbcImpl userDao) {
         this.userDao = userDao;
     }
 

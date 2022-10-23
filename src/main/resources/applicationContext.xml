@@ -2,31 +2,40 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/util
        https://www.springframework.org/schema/util/spring-util.xsd">
+    
+    <context:component-scan base-package="books"/>
+    <context:component-scan base-package="users"/>
+    <context:component-scan base-package="controller"/>
+
+<!--......................................book.............................................-->
 
     <bean id="dbConnectBook" class="books.dbServiceBook.DbConnectBook">
     </bean>
 
     <bean id="bookDao" class="books.dao.BookDaoJdbcImpl">
-        <constructor-arg ref="dbConnectBook"/>
+        <property name="dbConnectBook" ref="dbConnectBook"/>
     </bean>
 
     <bean id="serviceBook" class="books.service.ServiceBookImpl">
-        <constructor-arg ref="bookDao"/>
+        <property name="bookDao" ref="bookDao"/>
     </bean>
+
+<!--.......................................user............................................-->
 
     <bean id="dbConnectUser" class="users.dbServiceUsers.DbConnectUser">
     </bean>
 
     <bean id="userDao" class="users.dao.UserDaoJdbcImpl">
-        <constructor-arg ref="dbConnectUser"/>
+        <property name="dbConnectUser" ref="dbConnectUser"/>
     </bean>
 
     <bean id="serviceUser" class="users.service.ServiceUserImpl">
-        <constructor-arg ref="userDao"/>
+        <property name="userDao" ref="userDao"/>
     </bean>
 
 

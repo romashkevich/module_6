@@ -20,7 +20,7 @@ import java.util.List;
 
 @WebServlet("/book")
 public class AppAll extends HttpServlet {
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl(new BookDaoJdbcImpl(new DbConnectBook()));
+    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
     private static final Logger loggerAppAll = LogManager.getRootLogger();
 
 

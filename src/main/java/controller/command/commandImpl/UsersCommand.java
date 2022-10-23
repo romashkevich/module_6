@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UsersCommand implements Command {
 
-        private static final ServiceUser SERVICE_USER_ALL = new ServiceUserImpl(new UserDaoJdbcImpl(new DbConnectUser()));
+        private static final ServiceUser SERVICE_USER_ALL = new ServiceUserImpl();
 
         public String execute(HttpServletRequest req){
                 try {

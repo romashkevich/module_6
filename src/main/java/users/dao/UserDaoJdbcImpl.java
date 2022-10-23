@@ -37,7 +37,7 @@ public class UserDaoJdbcImpl implements UserDao {
     private DbConnectUser dbConnectUser;
     private static final Logger logger = LogManager.getLogger("request on bd");
 
-    public UserDaoJdbcImpl(DbConnectUser dbConnectUser) {
+    public void setDbConnectUser(DbConnectUser dbConnectUser) {
         this.dbConnectUser = dbConnectUser;
     }
 

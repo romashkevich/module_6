@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 
 public class CreateCommand implements Command {
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl(new BookDaoJdbcImpl(new DbConnectBook()));
+    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
 
     @Override
     public String execute(HttpServletRequest req) {

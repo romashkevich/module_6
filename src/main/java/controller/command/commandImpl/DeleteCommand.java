@@ -8,7 +8,7 @@ import controller.command.Command;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class DeleteCommand implements Command {
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl(new BookDaoJdbcImpl(new DbConnectBook()));
+    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
 
     @Override
     public String execute(HttpServletRequest req) {

@@ -17,7 +17,7 @@ public class ServiceBookImpl implements ServiceBook {
     private BookDaoJdbcImpl bookDao;
     private static final Logger loger = LogManager.getLogger("run main.books.service method");
 
-    public ServiceBookImpl(BookDaoJdbcImpl bookDao) {
+    public void setBookDao(BookDaoJdbcImpl bookDao) {
         this.bookDao = bookDao;
     }
 
