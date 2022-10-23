@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR" monitorInterval="300">
+
+    <Properties>
+        <property name="pattern_file">%d{HH:mm:ss.SSS} [%t] [%M] %-5level (%logger{5}) - %msg%n</property>
+        <property name="patternRoll">logroll/${date:yyyy-MM-dd}/%d{yyyy-MM-dd_HH-mm}_%i.txt</property>
+        <property name="patternConsole">%d{HH:mm:ss.SSS} %-5level (- %logger{5} -) : %M %n</property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="ConsoleAppenderMTD"
+                 target="SYSTEM_OUT">
+            <PatternLayout pattern="${patternConsole}"/>
+        </Console>
+
+        <Console name="ConsoleAppenderDB"
+                 target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern_file}"/>
+        </Console>
+
+        <RollingFile name="RollingFile"
+                     filename="logroll/${date:yyyyMMdd}/application-${date:yyyyMMdd}.txt"
+                     append="true"
+                     filePattern="${patternRoll}">
+            <PatternLayout pattern="${pattern_file}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="4"/>
+                <SizeBasedTriggeringPolicy size="1 B"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+
+        <File name="FileAppender"
+              fileName="logs/application-${date:yyyyMMdd}.txt"
+              bufferedIO="true"
+              append="false">
+            <PatternLayout pattern="${pattern_file}"/>
+        </File>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="run main.books.service method"
+                level="debug"
+                additivity="false">
+            <AppenderRef ref="ConsoleAppenderMTD"/>
+        </Logger>
+
+        <Logger name="request on bd"
+                level="debug"
+                additivity="false">
+            <AppenderRef ref="ConsoleAppenderDB"/>
+        </Logger>
+
+        <Logger name="connect db"
+                level="info"
+                additivity="false">
+            <AppenderRef ref="RollingFile"/>
+        </Logger>
+
+        <Root level="error">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

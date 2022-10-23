@@ -1,0 +1,13 @@
+<factorypath>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/postgresql/postgresql/42.3.4/postgresql-42.3.4.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/checkerframework/checker-qual/3.5.0/checker-qual-3.5.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/main/java/bookstore/1.0/bookstore-1.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/glassfish/web/jakarta.servlet.jsp.jstl/2.0.0-M1/jakarta.servlet.jsp.jstl-2.0.0-M1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/2.0.0-RC1/jakarta.servlet.jsp.jstl-api-2.0.0-RC1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/el/jakarta.el-api/4.0.0-RC1/jakarta.el-api-4.0.0-RC1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/xml/bind/jakarta.xml.bind-api/3.0.0-RC1/jakarta.xml.bind-api-3.0.0-RC1.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/jakarta/activation/jakarta.activation-api/2.0.0-rc1/jakarta.activation-api-2.0.0-rc1.jar" enabled="true" runInBatchMode="false"/>
+</factorypath>
