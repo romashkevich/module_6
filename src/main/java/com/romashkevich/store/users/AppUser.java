@@ -2,6 +2,8 @@ package com.romashkevich.store.users;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.romashkevich.store.users.service.ServiceUser;
 import com.romashkevich.store.users.service.ServiceUserImpl;
@@ -20,8 +22,10 @@ public class AppUser {
 
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ServiceUser serviceUser = context.getBean("serviceUser", ServiceUserImpl.class);
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        ServiceUser serviceUser = context.getBean("serviceUser", ServiceUserImpl.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(UserApplicationContext.class);
+        ServiceUser serviceUser = applicationContext.getBean(ServiceUserImpl.class);
         boolean process = true;
         while (process) {
             System.out.println("\n\t conditon : all, id, create, update, delete, email, lastname, count, login or exit (for exit program)");
