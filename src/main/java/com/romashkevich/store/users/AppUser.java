@@ -24,7 +24,7 @@ public class AppUser {
 
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //        ServiceUser serviceUser = context.getBean("serviceUser", ServiceUserImpl.class);
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(UserApplicationContext.class);
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(UserApplicationContext.class);
         ServiceUser serviceUser = applicationContext.getBean(ServiceUserImpl.class);
         boolean process = true;
         while (process) {

@@ -18,7 +18,7 @@ public class AppBook {
     public static void main(String[] args) {
 //      ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 //      ServiceBook serviceBook = context.getBean("serviceBook", ServiceBookImpl.class);
-        ApplicationContext cxt = new AnnotationConfigApplicationContext(BookApplicationContexts.class);
+        AnnotationConfigApplicationContext cxt = new AnnotationConfigApplicationContext(BookApplicationContexts.class);
         ServiceBook serviceBook = cxt.getBean(ServiceBookImpl.class);
 
         boolean process = true;
