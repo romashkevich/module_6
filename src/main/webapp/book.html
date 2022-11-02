@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Книги</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+      <form action="controller" method="POST">
+          command:  <select name="command">
+                        <option> book
+                        <option> books
+                        <option> create book
+                        <option> update book
+                    </select>
+          <br><br>
+        id: <input name="id"/>
+        isnb: <input name="isbn"/>
+        title: <input name="title"/>
+        author: <input name="author"/>
+        pages: <input name="pages"/>
+        cover: <input name="cover"/>
+        price: <input name="price"/>
+        <br><br>
+
+        <input type="submit" value="Отправить"/>
+      </form>
+
+</body>
+</html>

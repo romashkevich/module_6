@@ -1,4 +1,4 @@
-package com.romashkevich.store.controller.command.commandImpl;
+package com.romashkevich.store.controller.command.commandImpl.book;
 
 import com.romashkevich.store.books.service.ServiceBook;
 import com.romashkevich.store.books.service.ServiceBookImpl;
@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
-@Service
+@Service("book")
 public class BookCommand implements Command {
     private ServiceBookImpl serviceBook;
 
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
     @Autowired
     public void setServiceBook(ServiceBookImpl serviceBook) {
         this.serviceBook = serviceBook;

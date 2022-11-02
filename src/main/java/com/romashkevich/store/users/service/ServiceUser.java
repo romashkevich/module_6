@@ -14,7 +14,7 @@ public interface ServiceUser {
 
     public UserDto updateUserDto(UserDto user) throws SQLException, ClassNotFoundException;
 
-    public void deleteUserDto(Long id) throws SQLException, ClassNotFoundException;
+    public Boolean deleteUserDto(Long id) throws SQLException, ClassNotFoundException;
 
     public UserDto getUserDtoByEmail(String email) throws SQLException, ClassNotFoundException;
 

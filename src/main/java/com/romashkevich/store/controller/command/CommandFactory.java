@@ -1,7 +1,12 @@
 package com.romashkevich.store.controller.command;
 
 import com.romashkevich.store.controller.command.commandImpl.*;
-import com.romashkevich.store.controller.command.commandImpl.*;
+import com.romashkevich.store.controller.command.commandImpl.book.BookCommand;
+import com.romashkevich.store.controller.command.commandImpl.book.BooksCommand;
+import com.romashkevich.store.controller.command.commandImpl.book.CreateBookCommand;
+import com.romashkevich.store.controller.command.commandImpl.book.DeleteBookCommand;
+import com.romashkevich.store.controller.command.commandImpl.user.UserCommand;
+import com.romashkevich.store.controller.command.commandImpl.user.UsersCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +32,8 @@ public class CommandFactory {
         map.put("user", new UserCommand());
         map.put("users", new UsersCommand());
         map.put("error", new ErrorCommand());
-        map.put("create", new CreateCommand());
-        map.put("delete", new DeleteCommand());
+        map.put("create", new CreateBookCommand());
+        map.put("delete", new DeleteBookCommand());
     }
 
     public Command getCommand(String action) {

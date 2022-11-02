@@ -149,9 +149,8 @@ public class ServiceUserImpl implements ServiceUser {
     @Override
     public UserDto createUserDto(UserDto uDto) throws SQLException, ClassNotFoundException {
         loger.debug("");
-        UserDto userDto = new UserDto();
         User user1 = toUser(uDto);
-        userDto = toUserDto(userDao.createUser(user1));
+        UserDto userDto = toUserDto(userDao.createUser(user1));
         return userDto;
     }
 
@@ -165,10 +164,10 @@ public class ServiceUserImpl implements ServiceUser {
     }
 
     @Override
-    public void deleteUserDto(Long id) throws SQLException, ClassNotFoundException {
+    public Boolean deleteUserDto(Long id) throws SQLException, ClassNotFoundException {
         loger.debug("");
-        userDao.deleteUser(id);
-
+        Boolean answer = userDao.deleteUser(id);
+        return answer;
     }
 
     @Override
@@ -211,7 +210,8 @@ public class ServiceUserImpl implements ServiceUser {
     public UserDto getUserDtoByLolin(String login) throws SQLException, ClassNotFoundException {
         loger.debug("");
         User user;
-        UserDto userDto = new UserDto();
+        new UserDto();
+        UserDto userDto;
         user = userDao.getUserByLogin(login);
         userDto = toUserDto(user);
         return userDto;

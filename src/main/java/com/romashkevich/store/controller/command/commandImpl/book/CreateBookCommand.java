@@ -1,15 +1,21 @@
-package com.romashkevich.store.controller.command.commandImpl;
+package com.romashkevich.store.controller.command.commandImpl.book;
 
-import com.romashkevich.store.books.service.ServiceBook;
 import com.romashkevich.store.books.service.ServiceBookImpl;
 import com.romashkevich.store.books.service.dto.BookDto;
 import com.romashkevich.store.controller.command.Command;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-public class CreateCommand implements Command {
-    private static final ServiceBook SERVICE_BOOK_AppAll = new ServiceBookImpl();
+@Component("create book")
+public class CreateBookCommand implements Command {
+    private ServiceBookImpl SERVICE_BOOK_AppAll;
+@Autowired
+    public void setSERVICE_BOOK_AppAll(ServiceBookImpl SERVICE_BOOK_AppAll) {
+        this.SERVICE_BOOK_AppAll = SERVICE_BOOK_AppAll;
+    }
 
     @Override
     public String execute(HttpServletRequest req) {
@@ -22,7 +28,7 @@ public class CreateCommand implements Command {
         }
     }
 
-    private static BookDto setBookDto(HttpServletRequest req) {
+    private BookDto setBookDto(HttpServletRequest req) {
         BookDto book1 = new BookDto();
         book1.setIsbn(req.getParameter("isbn"));
         book1.setTitle(req.getParameter("title"));
