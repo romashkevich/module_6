@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<form action="controller" method="POST">
+    command: <select name="command">
+                <option> user
+                <option> users
+                <option> create user
+                <option> update user
+            </select>
+    <br><br>
+    id: <input name="id"/>
+    Login: <input name="login"/>
+    Password: <input name="password"/>
+    First name : <input name="firstName"/>
+    Last name : <input name="lastName"/>
+    SEX:    <select name="SEX">
+                <option> MAN
+                <option> WOMAN
+            </select>
+    Email: <input name="email"/>
+    Tel : <input name="telNumber"/>
+    Country: <input name="country"/>
+    City: <input name="city"/>
+    Street number : <input name="strNum"/>
+    Apartment: <input name="apart"/>
+    <br><br>
+
+    <input type="submit" value="Отправить"/>
+</form>
+</body>
+</html>
