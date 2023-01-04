@@ -100,6 +100,6 @@ public class Book {
                 ", pages=" + pages +
                 ", cover='" + cover + '\'' +
                 ", price=" + price +
-                '}';
+                '}'+"\n";
     }
 }

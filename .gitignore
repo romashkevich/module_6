@@ -4,3 +4,6 @@ target
 *.sh
 logroll
 logs
+### IntelliJ IDEA ###
+*.iws
+*.ipr

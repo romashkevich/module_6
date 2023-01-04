@@ -7,10 +7,11 @@ import com.romashkevich.store.controller.command.Command;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
-@Service("book")
+@Controller("book")
 public class BookCommand implements Command {
     private ServiceBookImpl serviceBook;
 
